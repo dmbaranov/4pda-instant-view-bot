@@ -21,11 +21,10 @@ void convertUrlToHttps(TeleDartMessage message) {
 
   var url = message.caption.split('\n').last;
 
-  if (!url.startsWith('http://4pda.ru')) {
+  if (!url.startsWith('https://4pda.ru')) {
     message.reply('Please send a post from 4PDA channel!');
     return;
   }
 
-  var httpsUrl = 'https://' + url.substring(7);
-  message.reply(httpsUrl);
+  message.reply(url);
 }
